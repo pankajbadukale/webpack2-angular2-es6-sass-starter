@@ -1,0 +1,19 @@
+@mixin app {
+app{
+    background-color: gray;
+
+    h1 {
+        font-size: 14px;
+    }
+
+    a {
+        background-color: white;
+        
+        &:hover {
+            color: red;
+        }
+    }
+}
+}
+
+@include app;
