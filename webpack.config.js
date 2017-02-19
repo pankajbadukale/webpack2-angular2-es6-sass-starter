@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
 
 module.exports = {
-    entry: HELP.SRC,
+    entry: HELP.ENTRY_FILE,
     output: {
         filename: HELP.OUTPUT_FILENAME,
         path: HELP.DIST_FOLDER
@@ -31,7 +31,8 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                //exclude: /(node_modules|bower_components)/,
+                include: HELP.INCLUDE_FOR_BABEL,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
